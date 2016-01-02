@@ -1,51 +1,49 @@
 header {
     width: 100%;
     margin: auto;
-    // background: linear-gradient(
-    //   rgba(26,17,34,.3),
-    //   rgba(26,17,34,.3)
-    // ),
-    // url(/assets/appleswmonkeyreduced.jpg);
-    // background-size: 100%;
 }
 
 .nav {
     display: flex;
-    flex-direction: row;
     margin: 10px;
-
-    .nav-items {
-        flex: 1 0 60%;
-        display: flex;
-        // font-size: 12px;
-        text-transform: uppercase;
-        // display: inline-block;
-        vertical-align: middle;
-
-        div {
-            flex: 1 0 0;
-            justify-content: center;
-            align-items: center;
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 48px;
-            text-align: center;
-        }
-    }
+    align-items: center;
+    flex-flow: row wrap;
 
     .names {
-        flex: 1 0 40%;
-        align-self: flex-start;
-        // font-size: 22px;
+        flex-grow: 1;
         font-size: $large-font-size;
         text-transform: none;
     }
+
+    .nav-items {
+        flex-grow: 1;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        text-transform: uppercase;
+        div {
+            margin: 8px;
+        }
+    }
 }
 
-@media only screen and (min-width: 75em) {
-    header .nav .names {
-        order: 0;
+@media only screen and (max-width: 760px) {
+    .nav {
+        text-align: center;
+        .nav-items {
+            justify-content: center;
+            div {
+                flex-basis: 100%;
+            }
+        }
+        .nav-items, .names {
+            flex-basis: 100%;
+        }
     }
+
+    // header .nav .names {
+    //     order: 0;
+    // }
 }
 
 section {
